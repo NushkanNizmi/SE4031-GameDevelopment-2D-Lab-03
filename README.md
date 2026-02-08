@@ -83,6 +83,7 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
 ```
 
 ### Step 4: Attach Script
@@ -109,10 +110,11 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(projectilePrefab, transform.position + Vector3.right * 0.6f, Quaternion.identity);
         }
     }
 }
+
 ```
 ### Step 2: Attach Script
 
@@ -154,6 +156,7 @@ void OnTriggerEnter2D(Collider2D other)
         Destroy(gameObject);
     }
 }
+
 ```
 ### Tag Projectile
 
@@ -184,6 +187,7 @@ void Update()
 
     transform.Translate(move * currentSpeed * Time.deltaTime);
 }
+
 ```
 
 ## Part E — Creative Feature (Choose ONE)  
@@ -199,6 +203,7 @@ else if (currentHealth > 30)
     healthText.color = Color.yellow;
 else
     healthText.color = Color.red;
+
 ```
 ### Option 2: Simple Screen Shake
 
@@ -230,6 +235,7 @@ public class CameraShake : MonoBehaviour
         transform.localPosition = originalPos;
     }
 }
+
 ```
 
 Attach to Main Camera.
